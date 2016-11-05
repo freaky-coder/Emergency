@@ -1,0 +1,63 @@
+Features:
+
+Client App:
+	-Login/Authentication
+		-First time login
+			-Aadhar Card ->Server + Locally
+			-Name
+			-Ph. No.
+			-Permanent Addr.
+			-Family Contacts(name,ph.no.)
+			-Medical History/Conditions 
+
+	-On Emergency Request:	
+		-GPS
+		-Requried Service(Fire,Ambulance,Police,
+			More{Terrorist attack,suspected bomb,wildfire}) ->Rating 5
+		-Submit
+		-Dispatch Service
+			-If resources available : 
+				-Display: estimate time of arrival
+			-Not Available:
+				-Display: Waiting for service
+			-questionare(MCQ Based)
+				-No Of People in danger(0,<5,>)
+			-Call
+
+
+
+
+Server App:
+	-Nearest Services
+	-OBJECTS:
+		-UserDetails
+			-Aadhar Card ->Server + Locally
+			-Name
+			-Ph. No.
+			-Permanent Addr.
+			-Family Contacts(name,ph.no.)
+			-Medical History/Conditions 
+		-Requests
+			-Request ID
+			-GPS Location
+			-Aadhar No
+			-Time of Request
+			-Requried Service(Fire,Ambulance,Police,
+				More{Terrorist attack,suspected bomb,wildfire}) ->Rating 5
+			-Assigned Service Provider ID. 
+			-ETA to Destination
+			-Emergency Rating: 1-5
+			-No Of People in Danger
+
+		-Services
+			-Service Provider ID
+			-Service Type
+			-Location(Lat,Long)
+			-Capacity
+			-Availability
+
+Service App:
+	-Map(Directions)
+	-Details of person of contact
+	-Medical/Personal/etc. Details
+	
