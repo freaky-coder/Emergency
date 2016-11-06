@@ -33,9 +33,8 @@ if (!$conn) {
 }
 
 else{
-	
-$sql = "INSERT INTO `user`(`u_name`, `u_phone`, `u_address`, `u_emphone`) VALUES ('Ayush','335555','Delhi','2222')";
-mysqli_query($conn, $sql);
+$sql1 = 'INSERT INTO `user`(`u_name`, `u_phone`, `u_address`, `u_emphone`) VALUES ("Ayush",9911111111 ,"Delhi" ,1313233)';
+mysqli_query($conn, $sql1);
 echo "New record created successfully";
 /*
 if (mysqli_query($conn, $sql)) {
@@ -44,10 +43,10 @@ if (mysqli_query($conn, $sql)) {
     echo "Error: ". $sql."<br>".mysqli_error($conn);
 }
 */
-mysqli_close($conn);
+
 }
+mysqli_close($conn);
 return true;
-	
 ?>
 </body>
 </html>
