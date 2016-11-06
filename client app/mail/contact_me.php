@@ -13,15 +13,21 @@ $phone = strip_tags(htmlspecialchars($_POST['phone']));
 $address = strip_tags(htmlspecialchars($_POST['address']));
 $emphone = strip_tags(htmlspecialchars($_POST['emphone']));
 
- /*$con = mysqli_connect('localhost','root','','server_db');
- if (!$con) {
-     die('Could not connect: '. mysqli_error($con));
- }
+ $conn = mysqli_connect("localhost", "root", "","server_db");
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
- mysqli_select_db($con,"server_db");
- $sql="INSERT INTO NAMES VALUES($name,$phone,$address,$emphone)";
- mysqli_query($con, $sql);
-*/
+$sql = "INSERT INTO user(u_name,u_phone,u_address,u_emphone)
+VALUES ($name, '$phone','$address',$emphone)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: ". $sql."<br>".mysqli_error($conn);
+}
+mysqli_close($conn);
 return true;
 	
 ?>
