@@ -12,12 +12,18 @@ $(function() {
             
             // get values from FORM
             var name = $("input#name").val();
-            var email = $("input#email").val();
+            var emphone = $("input#emphone").val();
             var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
-            var firstName = name; // For Success/Failure Message
+            var address = $("textarea#address").val();
+			console.log(name);	
+			console.log(phone);
+			console.log(emphone);
+			console.log(address);
+			// Extracting the first name for Success/Failure Message
+            var firstName = name; 
+			
             // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
+            if ((firstName.indexOf(' ') >= 0)) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
@@ -26,8 +32,8 @@ $(function() {
                 data: {
                     name: name,
                     phone: phone,
-                    email: email,
-                    message: message
+                    address: address,
+                    emphone: emphone
                 },
                 cache: false,
                 success: function() {
