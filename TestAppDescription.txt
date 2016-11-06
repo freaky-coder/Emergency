@@ -2,7 +2,6 @@ Server App:
 	-Nearest Services
 	-OBJECTS:
 		-UserDetails
-			-userID
 			-Name
 			-Ph. No.
 			-Permanent Addr.
@@ -12,7 +11,7 @@ Server App:
 			-requestID
 			-Lat
 			-Long
-			-userID
+			-Ph. No.
 			-Time of Request
 			-Requried Service(Fire,Ambulance,Police)
 				{
@@ -30,6 +29,8 @@ Server App:
 
 		-Services
 			-serviceID : Service Provider ID.
+			-Driver/Official Name
+			-Ph.No.
 			-Service Type(Fire,Ambulance,Police)
 			-Current Lat
 			-Current Long
