@@ -15,20 +15,17 @@ $(function() {
             var fire = $("input#fire").val();
             var ambulance = $("input#ambulance").val();
             var police = $("input#police").val();
+			// Printing values on console
 			console.log(r_phone);	
 			console.log(fire);
 			console.log(ambulance);
 			console.log(police);
-
             var service_code = 0;
-
+			
+            var request= document.getElementById("request_service");
+			request.innerHTML = 'Your request has been processed.<br> ETA= 8 min';
             if(fire != "on" && ambulance != "on" && police == "on")
                 console.log('111');    
-
-
-
-
-
 			// Extracting the first name for Success/Failure Message
             var firstName = name; 
 			
