@@ -1,6 +1,6 @@
 $(function() {
 
-    $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
+    $("#requestForm input,#requestForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
@@ -11,14 +11,24 @@ $(function() {
             event.preventDefault();
             
             // get values from FORM
-            var name = $("input#name").val();
+            var phone = $("input#r_phone").val();
             var fire = $("input#fire").val();
             var ambulance = $("input#ambulance").val();
-            var police = $("textarea#police").val();
-			console.log(name);	
-			console.log(phone);
-			console.log(emphone);
-			console.log(address);
+            var police = $("input#police").val();
+			console.log(r_phone);	
+			console.log(fire);
+			console.log(ambulance);
+			console.log(police);
+
+            var service_code = 0;
+
+            if(fire != "on" && ambulance != "on" && police == "on")
+                console.log('111');    
+
+
+
+
+
 			// Extracting the first name for Success/Failure Message
             var firstName = name; 
 			
@@ -27,7 +37,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "././mail/request_service.php",
                 type: "POST",
                 data: {
                     name: name,
